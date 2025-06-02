@@ -1,6 +1,8 @@
 .number-board-container {
     display: flex;
     flex-direction: column;
+
+    margin-top: 100px;
 }
 
 .number-board {
