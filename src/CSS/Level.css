@@ -1,0 +1,32 @@
+.level{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.hard,.easy,.medium {
+    height: 50px;
+    min-width: 70px;
+    padding: 10px 20px;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    background-color: transparent;
+    color: #ec025d;
+    border: none;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+}
+
+.hard:hover, .medium:hover, .easy:hover {
+    background-color: #ffee89;
+    box-shadow: 0 0 15px #ffe016, 0 0 25px #ffe016;
+    transform: scale(1.05);
+}

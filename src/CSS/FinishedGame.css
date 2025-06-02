@@ -1,0 +1,56 @@
+.finished-stats {
+    position: fixed;
+
+    z-index: 1000;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(30, 31, 34, 0.75);
+    backdrop-filter: blur(4px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px;
+    font-size: 16px; /* reset absurd size */
+    box-sizing: border-box;
+}
+
+
+.congratulations {
+    color: #ffe016;
+    font-size: 100px;
+    font-weight: lighter;
+    text-align: center;
+    margin-right: 450px; /* reset left/right margin to 0, keep bottom margin */
+    padding: 0;
+    text-shadow: 0 0 5px #ffe016, 0 0 10px #ffe016;
+    animation: pulseGlow 2s infinite ease-in-out;
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        text-shadow:
+                0 0 1px #c7a300,
+                0 0 6px #c7a300,
+                0 0 12px #c7a300,
+                0 0 18px #c7a300;
+    }
+    50% {
+        text-shadow:
+                0 0 1.5px #d1b600,
+                0 0 12px #d1b600,
+                0 0 18px #d1b600,
+                0 0 24px #d1b600;
+    }
+}
+
+
+.time {
+    font-size: 30px;
+    text-align: center;
+    color: white;
+
+    margin-top: 50px;
+}

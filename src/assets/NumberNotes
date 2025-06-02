@@ -1,0 +1,86 @@
+import NumberBoard from "./NumberBoard.jsx";
+import React from "react";
+
+
+function Board({ grid , setGrid, defaultCells, wrongCells, clickOnBoard, setCellClicked , candidate}) {
+
+    const numbers = [1,2,3,4,5,6,7,8,9];
+
+    function handleCellChange(value, row_index, col_index) {
+        //console.log("numberBoard is in grid function" + numberBoard);
+
+        if ((value > 0 && value < 10) || value === '') {
+            const newGrid = grid.map((row, i)=> {
+                return row.map((col, j)=> {
+                    if (j === col_index && i === row_index) {
+                        return parseInt(value);
+                    } return col;
+                })
+            });
+            setGrid(newGrid);
+        }
+    }
+
+    function handleCellClick(row_index, col_index) {
+        setCellClicked(row_index, col_index);
+    }
+
+    return (
+        <div className="board">
+
+                {grid.map((row, row_index) =>
+                    <div className="row" key={row_index}>
+                        {row.map((cell, col_index) => {
+                            const isWrongCell = wrongCells.some(([x, y]) => row_index === x && col_index === y);
+                            const isDefaultCell = defaultCells.some(([x, y]) => row_index === x && col_index === y);
+                            return (
+                                <div className="column" key={col_index}>
+                                    <input
+                                        className={`${isWrongCell ? "cell-wrong" : "cell-input"} 
+                                                ${isDefaultCell ? "cell-default" : "cell-input"}`.trim()
+                                        }
+                                        type="text"
+                                        min="1"
+                                        max="9"
+                                        onClick={() => handleCellClick(row_index, col_index)}
+                                        onChange={(e) =>handleCellChange(e.target.value,row_index, col_index)}
+                                        value={cell}
+                                    />
+
+                                </div>
+
+                            );
+                        })}
+                    </div>
+                )}
+
+
+            <div className="number-notes">
+                {grid.map((row, i) =>
+                    <div className="row" key={i}>
+                        {row.map((col, j) => {
+                            const isDefaultCell = defaultCells.some(([x, y]) => i === x && j=== y);
+                            return (
+                                <div className="column" key={`notes-${j}`}>
+                                    {!isDefaultCell && candidate && (
+                                        <div className="notes-container">
+                                            {numbers.map((number) => (
+                                                <button
+                                                    className="note-number"
+                                                    key={`note-${number}`}
+                                                >
+                                                    {number}
+                                                </button>
+                                            ))}
+                                        </div>
+                                    )}
+                                </div>
+                            );
+                        })}
+                    </div>
+                )}
+            </div>
+        </div>
+    );
+}
+export default Board;

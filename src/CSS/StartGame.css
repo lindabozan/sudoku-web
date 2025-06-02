@@ -1,0 +1,78 @@
+.start {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    z-index: 1000;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(30, 31, 34, 0.75);
+    backdrop-filter: blur(4px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.h1-title {
+    margin-right: 175px;
+    margin-bottom: 50px;
+
+    font-size: 160px;
+    font-family: 'GraffitiFont', sans-serif;
+    text-align: center;
+    color: #ec025d;
+    text-shadow: 0 0 5px #ec025d;
+}
+
+.shine-wrapper {
+    position: relative;
+    display: inline-block;
+    color: #ec025d;
+    animation: shine 2.5s infinite linear;
+}
+
+@keyframes shine {
+    0% {
+        text-shadow: 0 0 3px #ec025d, 0 0 6px #ec025d;
+    }
+    50% {
+        text-shadow: 0 0 6px #ff4d6d, 0 0 12px #ff4d6d;
+    }
+    100% {
+        text-shadow: 0 0 3px #ec025d, 0 0 6px #ec025d;
+    }
+}
+
+
+.start-button {
+    height: 100px;
+    width: 400px;
+
+    background-color: #fdd615;
+    color: #222;
+    font-weight: 700;
+    font-size: 40px;
+
+    border: none;
+    border-radius: 0.8rem;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.start-button:hover {
+    background-color: #e8be16;
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(232, 190, 22, 0.7);
+}
+
+.start-button:active {
+    transform: scale(0.95);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
