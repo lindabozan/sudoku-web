@@ -30,7 +30,7 @@ export default function NumberBoard({numberClicked, setCandidate, candidate, res
         </div>
     <button className="restart-game"
             onClick={restartGame}>
-        <MyIcon width={32} height={32} style={{ color: '#fd00a6' }} />
+        <MyIcon width={25} height={25} style={{ color: '#EC025DFF' }} />
     </button>
         </div>
 

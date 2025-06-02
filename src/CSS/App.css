@@ -106,5 +106,31 @@ h1 {
 
 }
 
+@media screen and (max-width: 600px) {
+    .board {
+        width: 360px;
+        height: 364px;
+    }
+
+    .row {
+        height: 40px;
+    }
+
+    .column {
+        width: 40px;
+        height: 40px;
+    }
+
+    .cell-input,
+    .cell-default,
+    .cell-wrong {
+        font-size: 20px;
+    }
+
+    .note-number,
+    .note-number-active {
+        font-size: 10px;
+    }
+}
 
 
